@@ -8,7 +8,7 @@
 ## TODOs
 
 * [x] Release the pre-training code of Dynam3D.
-* [ ] Release the pre-training checkpoints of Dynam3D.
+* [x] Release the pre-training checkpoints of Dynam3D.
 * [x] Release the pre-training datasets of Dynam3D.
 * [x] Release the code of vision-language navigation.
 * [ ] Release the checkpoints of vision-language navigation.
