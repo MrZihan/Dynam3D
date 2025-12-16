@@ -24,7 +24,7 @@
    conda activate dynam3d
    ```
 
-2. Install `habitat simulator [v0.1.7](https://github.com/facebookresearch/habitat-lab/releases/tag/v0.1.7)` and `habitat-lab [v0.1.7](https://github.com/facebookresearch/habitat-lab/tree/v0.1.7)` : follow instructions from [ETPNav](https://github.com/MarSaKi/ETPNav) or [VLN-CE](https://github.com/jacobkrantz/VLN-CE).
+2. Install habitat simulator [v0.1.7](https://github.com/facebookresearch/habitat-lab/releases/tag/v0.1.7) and habitat-lab [v0.1.7](https://github.com/facebookresearch/habitat-lab/tree/v0.1.7) : follow instructions from [ETPNav](https://github.com/MarSaKi/ETPNav) or [VLN-CE](https://github.com/jacobkrantz/VLN-CE).
 
 3. Install `torch_kdtree` for K-nearest feature search from [torch_kdtree](https://github.com/thomgrand/torch_kdtree).
    
