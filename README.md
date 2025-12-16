@@ -44,7 +44,7 @@
 
 5. Download the preprocessed data and checkpoints from [Hugging Face](https://huggingface.co/datasets/MrZihanWang/Dynam3D).
    
-6. (Optional) Download other Pre-training data.
+6. Download other Pre-training data.
    
     Download RGB-D images of [ARKitScenes](https://github.com/apple/ARKitScenes)
    
