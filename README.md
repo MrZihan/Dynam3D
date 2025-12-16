@@ -15,3 +15,65 @@
 * [x] Release the code of vision-language navigation.
 * [ ] Release the checkpoints of vision-language navigation.
 * [x] Release the training datasets of vision-language navigation.
+
+### Requirements
+
+1. Create a Conda environment. We developed this project with Python 3.8.
+   ```
+   conda env create -f environment.yaml
+   conda activate dynam3d
+   ```
+
+2. Install `habitat simulator [v0.1.7](https://github.com/facebookresearch/habitat-lab/releases/tag/v0.1.7) and `habitat-lab [v0.1.7](https://github.com/facebookresearch/habitat-lab/tree/v0.1.7)` : follow instructions from [ETPNav](https://github.com/MarSaKi/ETPNav) or [VLN-CE](https://github.com/jacobkrantz/VLN-CE).
+
+3. Install `torch_kdtree` for K-nearest feature search from [torch_kdtree](https://github.com/thomgrand/torch_kdtree).
+   
+   ```
+   git clone https://github.com/thomgrand/torch_kdtree
+   cd torch_kdtree
+   git submodule init
+   git submodule update
+   pip3 install .
+   ```
+
+4. Install `tinycudann` for faster multi-layer perceptrons (MLPs) from [tiny-cuda-nn](https://github.com/NVlabs/tiny-cuda-nn).
+   
+   ```
+   pip3 install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
+   ```
+
+5. Download the preprocessed data and checkpoints from [Hugging Face](https://huggingface.co/datasets/MrZihanWang/Dynam3D).
+   
+6. (Optional) Download other Pre-training data.
+    Download RGB-D images of [ARKitScenes](https://github.com/apple/ARKitScenes)
+    Download RGB-D images of [Structured3D](https://github.com/bertjiazheng/Structured3D)
+
+### (Optional) Pre-train the Dynam3D Representation Model
+
+```
+cd Dynam3D_Pretrain
+bash run_3dff/3dff.bash train 2341
+python3 convert_ckpt.py # Convert the pre-trained checkpoint for downstream tasks, i.e., dynam3d.pth
+```
+### Train the Dynam3D-VLN Model
+Please check the navigation training and validation data [Navigation Data](https://huggingface.co/datasets/MrZihanWang/Dynam3D/tree/main/data/datasets), and make the necessary modifications to [task.py])(Dynam3D_VLN/habitat_extensions/task.py) and [r2r_vlnce.yaml](Dynam3D_VLN/scripts/r2r_vlnce.yaml).
+```
+cd Dynam3D_VLN
+bash scripts/main.bash train 2344 # training
+bash scripts/main.bash eval 2344 # evaluation
+bash scripts/main.bash inter 2344 # inference
+```
+## Citation
+
+```bibtex
+@inproceedings{wang2025dynam3d,
+  title={Dynam3D: Dynamic Layered 3D Tokens Empower VLM for Vision-and-Language Navigation},
+  author={Wang, Zihan and Lee, Seungjun and Lee, Gim Hee},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2025}
+}
+```
+
+## Acknowledgments
+
+Our code is based on [llava-phi-3-mini-hf](https://huggingface.co/xtuner/llava-phi-3-mini-hf), [g3D-LF](https://github.com/MrZihan/g3D-LF) and [ETPNav](https://github.com/MarSaKi/ETPNav). Thanks for their great works!
