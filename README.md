@@ -45,7 +45,9 @@
 5. Download the preprocessed data and checkpoints from [Hugging Face](https://huggingface.co/datasets/MrZihanWang/Dynam3D).
    
 6. (Optional) Download other Pre-training data.
+   
     Download RGB-D images of [ARKitScenes](https://github.com/apple/ARKitScenes)
+   
     Download RGB-D images of [Structured3D](https://github.com/bertjiazheng/Structured3D)
 
 ### (Optional) Pre-train the Dynam3D Representation Model
@@ -56,7 +58,7 @@ bash run_3dff/3dff.bash train 2341
 python3 convert_ckpt.py # Convert the pre-trained checkpoint for downstream tasks, i.e., dynam3d.pth
 ```
 ### Train the Dynam3D-VLN Model
-Please check the navigation training and validation data [Navigation Data](https://huggingface.co/datasets/MrZihanWang/Dynam3D/tree/main/data/datasets), and make the necessary modifications to [task.py])(Dynam3D_VLN/habitat_extensions/task.py) and [r2r_vlnce.yaml](Dynam3D_VLN/scripts/r2r_vlnce.yaml).
+Please check the navigation training and validation data [Navigation Data](https://huggingface.co/datasets/MrZihanWang/Dynam3D/tree/main/data/datasets), and make the necessary modifications to [task.py](Dynam3D_VLN/habitat_extensions/task.py) and [r2r_vlnce.yaml](Dynam3D_VLN/scripts/r2r_vlnce.yaml).
 ```
 cd Dynam3D_VLN
 bash scripts/main.bash train 2344 # training
