@@ -1,0 +1,2 @@
+The code in this folder is designed to convert VLN datasets from discrete environments into the continuous Habitat simulator. 
+Due to an unresolved bug, the Habitat simulator is unable to load additional scenes after a certain number have been processed, which causes the conversion process to terminate. Therefore, for large-scale datasets such as ScaleVLN and NavRAG, the Python script must be run multiple times to perform the conversion in batches. Intermediate results are saved in temporary JSON files.
